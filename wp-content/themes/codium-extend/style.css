@@ -945,3 +945,7 @@ div#header{position: relative;}
 		width: 100%;
 	}
 }
+
+.size-thumbnail {
+	width: 150px	;
+}

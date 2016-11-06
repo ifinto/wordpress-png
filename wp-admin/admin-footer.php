@@ -115,5 +115,15 @@ if ( function_exists('get_site_option') ) {
 
 <div class="clear"></div></div><!-- wpwrap -->
 <script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+<script>
+	jQuery(function ($) {
+		var container = $('#titlediv');
+		var el = $('#wp-content-wrap .wp-editor-area');
+		var content = $('#wp-content-wrap .wp-editor-area').val();
+		if (!content) return;
+		content = content.replace(/(.*\.png)/g, '<img src="/wp-content/uploads/full/$1" style="width:300px; margin: 30px 0 0;"\/>');
+		container.append(content);
+	});
+</script>
 </body>
 </html>

@@ -214,7 +214,7 @@ div.formcontainer{width:100%}
 .attachment-medium{max-width:90%; height:auto;-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.8);-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.8);}
 .gallery .gallery-caption{color:#888; font-size:12px; margin:0 0 12px}
 .gallery br+br{display:none}
-.attachment-thumbnail{max-width:90%; height:auto;-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.8);-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.8);}
+.attachment-thumbnail{max-width:90%; height:auto;-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3);-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3);}
 
 /*line break style*/
 .linebreak {padding :1em 0 0.5em 0; border-top:2px solid #f1f2f4;float: left; width: 100%;}

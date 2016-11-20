@@ -9,6 +9,19 @@
     <a href="<?= $src ?>" target="_blank">
       <img class="alignnone size-full" src="<?= $src ?>" alt="<?= $title ?>">
     </a>
+
+    <div class="download-btn-holder">
+    	<a href="<?= $src ?>" download class="download-btn">Download image</a>
+    </div>
+    <div class="image-details">
+	    <p>
+	    	<strong>Resolution: </strong><?= $post->image_resolution ?>
+	    </p>
+	    <p>
+	    	<strong>Image size: </strong><?= $post->image_size ?>
+	    </p>
+    </div>
+
 <?php
   }
 ?>

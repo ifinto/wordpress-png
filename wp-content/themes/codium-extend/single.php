@@ -12,11 +12,13 @@
 				<div class="entry-content">
 					<?php get_template_part('template-parts/single-image'); ?>
 					<div class="clear"></div>
+					<div></h1>
+
 					<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'codium_extend' ), 'after' => '</div>' ) ); ?>
 					
 					<?php if(is_single() && function_exists('igit_rpwt_posts')) igit_rpwt_posts(); ?>
  				</div>
-	<div style="clear:both;"></div>		
+				<div style="clear:both;"></div>		
 			
 				<div class="clear"></div>
 			</div><!-- .post -->

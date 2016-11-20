@@ -15,11 +15,12 @@
     </div>
     <div class="image-details">
 	    <p>
-	    	<strong>Resolution: </strong><?= $post->image_resolution ?>
+	    	<!-- <strong>Resolution: </strong><?= $post->image_resolution ?> -->
 	    </p>
 	    <p>
-	    	<strong>Image size: </strong><?= $post->image_size ?>
+	    	<!-- <strong>Image size: </strong><?= $post->image_size ?> -->
 	    </p>
+	    <br>
     </div>
 
 <?php

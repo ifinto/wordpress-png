@@ -1,4 +1,50 @@
 <?php get_header( ); ?>
+
+<div class="home-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<a href="/" class="logo"><img src="<?php bloginfo('template_directory'); ?>/images/logo-main.png" alt=""></a>
+				<div class="	home-search-wrapper">
+					<input type="text" class="form-control" placeholder="Search car icons, photos, whatever">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="home-categories">
+	<div class="container">
+		<h2>Categories</h2>
+		<div class="row">
+			<div class="col-sm-3">
+				<ul>
+					<li><a href="">Abcdef</a></li>
+					<li><a href="">Abcdef</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<ul>
+					<li><a href="">Abcdef</a></li>
+					<li><a href="">Abcdef</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<ul>
+					<li><a href="">Abcdef</a></li>
+					<li><a href="">Abcdef</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<ul>
+					<li><a href="">Abcdef</a></li>
+					<li><a href="">Abcdef</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
 	<div id="container" class="">
 		<div id="content" class="column">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home add') ) : ?><?php endif; ?>

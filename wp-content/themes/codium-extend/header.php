@@ -10,7 +10,8 @@
 
 <title><?php bloginfo('name'); wp_title();?></title>
 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
 
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 
@@ -22,60 +23,27 @@
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
-<?php wp_head() ?>
+<?php 
+//wp_head() 
+?>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-83966738-2', 'auto');
-  ga('send', 'pageview');
+  // ga('create', 'UA-83966738-2', 'auto');
+  // ga('send', 'pageview');
 
 </script>
 
-
 </head>
 
-
-
 <body <?php body_class(); ?>> 
-
-
-
-<div id="wrapperpub" class="container">
-
-	<div id="header">
-
-		<div class="sixteen columns">
-
-			<h1 id="blog-title" class="blogtitle"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a></h1>
-
-			<div class="description"><?php bloginfo('description'); ?> </div>
-
-		</div><!-- sixteen columns -->
-
-		<form method="get" id="searchform" action="<?php bloginfo('url'); ?>">
-
-			<input class="ilarge" type="text" value="" name="s" id="s" />
-
-			<input class="submit" type="submit" value="Search" id="searchsubmit" />
-
-		</form>
-
-		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary-menu' ) ); ?>
-
-	</div><!--  #header -->	
-
-</div><!--  #wrapperpub -->			
-
 <div class="clear"></div>
-
 <div id="wrapper" class="container">	
-
-		
-
+</div>	
 <div class="clear"></div>		
 
 	

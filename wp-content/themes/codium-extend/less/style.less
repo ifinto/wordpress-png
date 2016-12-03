@@ -1,0 +1,76 @@
+@import "bootstrap/bootstrap.less";
+
+.home-hero {
+	padding: 90px 0 110px;
+	background: #222;
+	text-align: center;
+
+	.logo {
+		display: inline-block;
+	}
+	.home-search-wrapper {
+		position: relative;
+		margin: 20px 0 0;
+
+		input {
+			height: 50px;
+			padding-right: 50px;
+			background: none;
+			border-width: 7px;
+			font-size: 27px;
+			font-family: monospace;
+			color: #fff;
+		}
+		button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 50px;
+			bottom: 0;
+			border: none;
+			border-radius: 0;
+
+			span {
+				font-size: 21px;
+			}
+		}
+	}
+}
+
+.home-categories {
+	ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+    }
+	}
+}
+
+.footer {
+  background: #222;
+  color: #999;
+  text-align: left;
+  padding: 50px 0;
+
+  .logo-footer {
+		img {
+			height: 30px;
+		}
+  }
+
+	ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+    	padding: 7px 0 5px;
+
+    	a {
+  	  	color: @text-on-dark;
+  		}
+    }
+	}
+}

@@ -5,85 +5,64 @@
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
 				<a href="/" class="logo"><img src="<?php bloginfo('template_directory'); ?>/images/logo-main.png" alt=""></a>
-				<div class="	home-search-wrapper">
-					<input type="text" class="form-control" placeholder="Search car icons, photos, whatever">
+				<div class="home-search-wrapper">
+					<form method="get" action="<?= home_url( '/' ); ?>">
+						<input type="text" class="form-control" placeholder="Search car icons, photos, whatever" name="s">
+						<button class="submit-btn"></button>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="home-categories">
+<div class="home-categories page-section">
 	<div class="container">
-		<h2>Categories</h2>
+		<h2 class="section-title">Categories</h2>
 		<div class="row">
-			<div class="col-sm-3">
-				<ul>
-					<li><a href="">Abcdef</a></li>
-					<li><a href="">Abcdef</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-3">
-				<ul>
-					<li><a href="">Abcdef</a></li>
-					<li><a href="">Abcdef</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-3">
-				<ul>
-					<li><a href="">Abcdef</a></li>
-					<li><a href="">Abcdef</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-3">
-				<ul>
-					<li><a href="">Abcdef</a></li>
-					<li><a href="">Abcdef</a></li>
-				</ul>
-			</div>
+			<?php
+			$categories = get_categories( array(
+		    'orderby' => 'name',
+		    'order'   => 'ASC',
+		    'hide_empty' => true,
+		    'exclude_tree' => [213]
+			) );
+			 
+			foreach( $categories as $category ) {
+		    echo '<div class="col-sm-3">';
+		    echo '  <a href="'. get_category_link( $category->term_id ) .'">';
+		    echo '    <span class="cat-icon glyphicon glyphicon-flag" aria-hidden="true"></span> ';
+		    echo      $category->name;
+		    echo '  </a>';
+		    echo '</div>';
+			}
+			?>
 		</div>
 	</div>
 </div>
 
-	<div id="container" class="">
-		<div id="content" class="column">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home add') ) : ?><?php endif; ?>
+<div class="home-posts block-grid-wrapper page-section">
+	<div class="container">
+		<h2 class="section-title">Featured posts</h2>
+		<div class="block-grid-sm-4">
 			<?php if (have_posts()) : ?> 
-
 			<?php while (have_posts()) : the_post(); ?>
-			<!-- Begin post -->
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="title-box">
-						<div class="title-box-info">
-							<h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Link to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark">
-							<?php if (strlen($post->post_title) > 20) {
-								echo substr(the_title($before = '', $after = '', FALSE), 0, 20) . '...'; } else {
-								the_title();
-								} ?>
-							</a></h2>
-						</div>
-					</div>
-					<div class="entry-content">
+				<div class="block-grid-item">
+					<div class="list-item">
 						<a href="<?php the_permalink() ?>" rel="bookmark">
 							<?php get_template_part('template-parts/list-item-image'); ?>
+							<h2 class="entry-title"><?= get_the_title(); ?></h2>
 						</a>
 					</div>
-			</div>
+				</div>
+			<?php endwhile; ?>
+			<?php endif; ?>
+		</div>
+	</div>
 
-<?php endwhile; endif ?>
-
-<div class="center">			
-	<?php if(function_exists('wp_pagenavi')) { 
-		wp_pagenavi();
-	} else {?>
-		<div class="navigation mobileoff"><p><?php posts_nav_link(); ?></p></div>
-		 <?php } ?>  
-		<div class="navigation_mobile"><p><?php posts_nav_link(); ?></p></div> 
+	<div class="center">			
+		<?php	if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>  
+	</div>
 </div>
-
-
-		</div><!-- #content -->
-	</div><!-- #container -->
-	
 
 <?php get_footer() ?>

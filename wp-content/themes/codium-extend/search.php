@@ -1,67 +1,63 @@
 <?php get_header( ); ?>
-	<div id="container">
-		<div id="content" class="column">
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'codium_extend' ), '' . get_search_query() . '<span></span>' ); ?></h1>
-			<div class="linebreak clear"></div>	
-			<?php if (have_posts()) : ?>  
-			<?php while (have_posts()) : the_post(); ?>
-			
-			
-			<!-- Begin post -->
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="title-box">
-						<div class="title-box-info">
-							<h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Link to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark">
-							<?php if (strlen($post->post_title) > 20) {
-								echo substr(the_title($before = '', $after = '', FALSE), 0, 20) . '...'; } else {
-								the_title();
-								} ?>
-							</a></h2>
-						</div>
-					</div>
-					<div class="entry-content">
-						<a href="<?php the_permalink() ?>" rel="bookmark">
-							<?php get_template_part('template-parts/list-item-image'); ?>
-						</a>
-					</div>
-			</div>
 
-<?php endwhile;  ?>
-
-<div class="center">			
-	<?php if(function_exists('wp_pagenavi')) { 
-		wp_pagenavi();
-	} else {?>
-		<div class="navigation mobileoff"><p><?php posts_nav_link(); ?></p></div>
-		 <?php } ?>  
-		<div class="navigation_mobile"><p><?php posts_nav_link(); ?></p></div> 
+<div class="page-title">
+	<h1><?php printf( __( 'Search Results for: %s', 'codium_extend' ), '' . get_search_query() . '<span></span>' ); ?></h1>
 </div>
 
+<div class="search-page">
+	<div class="search-header">
+		<div class="search-filters-title">
+			Search filters
+		</div>
+		<div class="search-categories">
+		</div>
+	</div>
+	<div class="search-filters js-search-filters">
+		<section>
+			<h3 class="filter-title">Image size</h3>
+			<div class="js-size-slider"></div>
+			<div class="slider-values">
+				<div class="slider-value-from js-size-slider-from"></div>
+				<div class="slider-value-to   js-size-slider-to"></div>
+			</div>
+		</section>
+	</div>
+	<div class="search-output block-grid-wrapper">
+		<div class="block-grid-lg-6 block-grid-md-4 block-grid-sm-3">
+			<?php
+				if (have_posts()) :
+				while (have_posts()) : the_post();
 
-		</div><!-- #content -->
-	</div><!-- #container -->
-	
-<?php //get_sidebar() ?>
-<?php get_footer() ?>
+				$text  = $post->post_content;
+				$array = preg_split('/\s*\R\s*/m', trim($text), NULL, PREG_SPLIT_NO_EMPTY);
+				$first = $array[0];
+				list($url, $params) = explode('?', $first);
+				if ($params) {
+					parse_str($params, $img_params);
+				}
+				if ($img_params['w'] && $_GET["w_from"]) {
+					if ($img_params['w'] < $_GET["w_from"]) return;
+				} 
+				if ($img_params['w'] && $_GET["w_to"]) {
+					if ($img_params['w'] > $_GET["w_to"]) return;
+				} 
+			?>
+				<div class="block-grid-item">
+					<div class="list-item">
+						<a href="<?php the_permalink() ?>" rel="bookmark">
+							<?php get_template_part('template-parts/list-item-image'); ?>
+							<h2 class="entry-title"><?= get_the_title(); ?></h2>
+						</a>
+					</div>
+				</div>
+			<?php endwhile; ?>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
 
+<div class="center">			
+	<?php	if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>  
+</div>
 
-<?php else : ?>
-
-<div id="post-0" class="no-results not-found">
-					<h2 class="entry-title"><?php _e( 'Nothing Found', 'codium_extend' ); ?></h2>
-					<div class="entry-content">
-						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'codium_extend' ); ?></p>
-						<?php //get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</div><!-- #post-0 -->
-<script type="text/javascript">
-	                // focus on search field after it has loaded
-	                document.getElementById('s') && document.getElementById('s').focus();
-</script>				
-<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #container -->
-
-<?php //get_sidebar() ?>
 <?php get_footer() ?>

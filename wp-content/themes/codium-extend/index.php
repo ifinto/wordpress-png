@@ -25,7 +25,7 @@
 		    'orderby' => 'name',
 		    'order'   => 'ASC',
 		    'hide_empty' => true,
-		    'exclude_tree' => [213]
+		    'include' => [48, 91, 173, 407, 408, 432, 485, 7]
 			) );
 			 
 			foreach( $categories as $category ) {

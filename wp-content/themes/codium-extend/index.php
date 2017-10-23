@@ -4,7 +4,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
-				<a href="/" class="logo"><img src="<?php bloginfo('template_directory'); ?>/images/logo-main.png" alt=""></a>
+			  <h1 class="home-hero-title">Download Free PNG on transparent background</h1>
+			  <p>Images of things that could help you in design. Only high-quality pictures.</p>
 				<div class="home-search-wrapper">
 					<form method="get" action="<?= home_url( '/' ); ?>">
 						<input type="text" class="form-control" placeholder="Search car icons, photos, whatever" name="s">
@@ -43,7 +44,7 @@
 
 <div class="home-posts block-grid-wrapper page-section">
 	<div class="container">
-		<h2 class="section-title">Featured posts</h2>
+		<h2 class="section-title">Featured clipart</h2>
 		<div class="block-grid-sm-4">
 			<?php if (have_posts()) : ?> 
 			<?php while (have_posts()) : the_post(); ?>
@@ -59,10 +60,8 @@
 			<?php endif; ?>
 		</div>
 	</div>
-
-	<div class="center">			
-		<?php	if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>  
-	</div>
+	
+	<br>
 </div>
 
 <?php get_footer() ?>

@@ -9,8 +9,7 @@
 			  </p>
 
 			  <p class="copyright">
-				  Copyright 2017
-				  All rights reserved.
+				  All images available for download only for noncommercial use.
 			  </p>
 
 			  <p class="social-links">

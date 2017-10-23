@@ -61,7 +61,9 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="<?= home_url( '/' ); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory'); ?>/images/logo-header.png" alt=""></a>
+			<a href="<?= home_url( '/' ); ?>" class="navbar-brand">
+			  <img src="<?php bloginfo('template_directory'); ?>/images/logo-header.png" alt="Car png clipart">
+		  </a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
 			<form class="navbar-form navbar-left" role="search" method="get" action="<?= home_url( '/' ); ?>">

@@ -1,13 +1,19 @@
 <?php get_header( ); ?>
 
 <div class="home-posts block-grid-wrapper page-section">
-	<h1 class="page-title section-title">
-		<div class="container">
-		<?php
-			printf( __( '%s', 'codium_extend' ), '' . single_cat_title( '', false ) . '  PNG Clipart' );
-		?>
-		</div>
-	</h1>
+	<div class="container">
+		<h1 class="page-title section-title">
+			<?php
+				printf( __( '%s', 'codium_extend' ), '' . single_cat_title( '', false ) . '  PNG Clipart' );
+			?>
+		</h1>
+		<p>
+			Free images of 
+			<?php printf( __( '%s', 'codium_extend' ), '' . single_cat_title( '', false ) . '' ); ?>
+			in PNG with transparent background.
+		</p>
+	</div>
+
 	<div class="container">
 		<div class="block-grid-sm-4">
 			<?php if (have_posts()) : ?> 

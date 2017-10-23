@@ -1,7 +1,7 @@
 <?php
 
 // Get the client IP
-function lz_getip(){
+function _lz_getip(){
 	if(isset($_SERVER["REMOTE_ADDR"])){
 		return $_SERVER["REMOTE_ADDR"];
 	}elseif(isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
@@ -9,6 +9,32 @@ function lz_getip(){
 	}elseif(isset($_SERVER["HTTP_CLIENT_IP"])){
 		return $_SERVER["HTTP_CLIENT_IP"];
 	}
+}
+
+// Get the client IP
+function lz_getip(){
+	
+	global $loginizer;
+	
+	// Just so that we have something
+	$ip = _lz_getip();
+	
+	$loginizer['ip_method'] = (int) @$loginizer['ip_method'];
+	
+	if(isset($_SERVER["REMOTE_ADDR"])){
+		$ip = $_SERVER["REMOTE_ADDR"];
+	}
+	
+	if(isset($_SERVER["HTTP_X_FORWARDED_FOR"]) && @$loginizer['ip_method'] == 1){
+		$ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+	}
+	
+	if(isset($_SERVER["HTTP_CLIENT_IP"]) && @$loginizer['ip_method'] == 2){
+		$ip = $_SERVER["HTTP_CLIENT_IP"];
+	}
+	
+	return $ip;
+	
 }
 
 // Execute a select query and return an array

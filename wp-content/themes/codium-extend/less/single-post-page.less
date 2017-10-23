@@ -1,19 +1,17 @@
 .single-post-page {
 	.page-title {
 		margin-bottom: 20px;
-		text-align: left;
+		text-align: center;
 	}
 	.entry-images {
 		margin: 0 0 50px;
+		text-align: center;
 		
-		.post-details-wrapper {
-			display: inline-block;
-			width: 850px;
-		}
 		.image-wrapper {
 			position: relative;
+			display: inline-block;
 			margin: 0 0 10px;
-			padding: 30px 20px 50px;
+			padding: 20px;
 			border: 1px solid #eee;
 
 			.image-details-left {
@@ -29,70 +27,24 @@
 				}
 			}
 
+			.image-details-right {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				text-align: right;
+				padding: 3px;
+
+				a.download-btn {
+					padding: 3px 6px;
+				}
+			}
 
 			img {
-				max-width: 100%;
+				max-width: 800px;
 			}
 		}
-		.image-details {
-			.img-details {
-			  margin: 0 0 20px;
-			  font-size: 17px;
-
-			  p {
-			  	margin-bottom: 5px;
-			  }
-			}
-			.img-share-buttons {
-				height: 20px;
-			  margin: 0 0 20px;
-
-			  .twitter-share-button,
-			  .fb-like {
-			    margin-right: 5px;
-			  }
-			  #___plusone_0 {
-			  	width: 60px !important;
-			  }
-			}
-			.img-embed {
-				min-height: 20px;
-				margin: 0 0 25px;
-				
-				.form-group {
-					margin-bottom: 10px;
-				}
-				label {
-					margin-bottom: 3px;
-				}
-			}
-			.btn-download {
-			  margin: 0 0 20px;
-			  border-radius: 3px;
-			}
-			.policy-text {
-				font-size: 13px;
-			}
-		}
-		.post-details-wrapper {
-			margin: 20px 0 0;
-			text-align: left;
-
-			.post-tags {
-				font-size: 20px;
-
-				a {
-					display: inline-block;
-					margin: 0 0 0 10px;
-
-					.glyphicon {
-						margin-right: -2px;
-						margin-left: -1px;
-						font-size: 15px;
-				    opacity: 0.4;
-					}
-				}
-			}
-		}
+	}
+	.image-details {
+		text-align: center;
 	}
 }

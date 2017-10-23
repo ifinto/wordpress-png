@@ -23,13 +23,13 @@
 define('DB_NAME', 'malyniak_carpng');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'malyniak_carpng');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'OQoQeuNuJ');
 
 /** Имя сервера MySQL */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db14.freehost.com.ua');
 
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');

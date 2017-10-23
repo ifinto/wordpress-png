@@ -1,13 +1,13 @@
 === Loginizer ===
 Contributors: loginizer
-Tags: access, admin, Loginizer, login, logs, ban ip, failed login, ip, whitelist ip, blacklist ip, failed attempts, lockouts, hack, authentication, login, security
+Tags: access, admin, Loginizer, login, logs, ban ip, failed login, ip, whitelist ip, blacklist ip, failed attempts, lockouts, hack, authentication, login, security, rename login url, rename login, rename wp-admin, secure wp-admin, rename admin url, secure admin
 Requires at least: 3.0
-Tested up to: 4.6.1
-Stable tag: 1.3.1
+Tested up to: 4.7
+Stable tag: 1.3.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Loginizer is a WordPress plugin which helps you fight against bruteforce attack.
+Loginizer is a WordPress security plugin which helps you fight against bruteforce attacks.
 
 == Description ==
 
@@ -30,6 +30,7 @@ Pro Features :
 * Login Challenge Question - The user can setup a <i>Challenge Question and Answer</i> as an additional security layer. After Login, the user will need to answer the question to complete the login.
 * reCAPTCHA - Google's reCAPTCHA can be configured for the Login screen, Comments Section, Registration Form, etc. to prevent automated brute force attacks. Supports WooCommerce as well.
 * Rename Login Page - The Admin can rename the login URL (slug) to something different from wp-login.php to prevent automated brute force attacks.
+* Rename WP-Admin URL - The Admin area in WordPress is accessed via wp-admin. With loginizer you can change it to anything e.g. site-admin
 * Rename Login with Secrecy - If set, then all Login URL's will still point to wp-login.php and users will have to access the New Login Slug by typing it in the browser.
 * Disable XML-RPC - An option to simply disable XML-RPC in WordPress. Most of the WordPress users don't need XML-RPC and can disable it to prevent automated brute force attacks.
 * Rename XML-RPC - The Admin can rename the XML-RPC to something different from xmlrpc.php to prevent automated brute force attacks.
@@ -63,6 +64,10 @@ That's it. You're done!
 3. Loginizer Brute Force Settings page
 
 == Changelog ==
+
+= 1.3.2 =
+* [Feature] Added option to choose between REMOTE_ADDR, HTTP_CLIENT_IP and HTTP_X_FORWARDED for websites behind a proxy 
+* [Task] The news.js will now be loaded from HTTPS servers
 
 = 1.3.1 =
 * [Feature] The Login attempt logs will now be shown as per the last attempt TIME and in Descending Order

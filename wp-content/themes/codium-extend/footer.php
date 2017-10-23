@@ -26,7 +26,7 @@
 		  <div class="col-sm-3">
 			  <ul>
 				  <li><a href="/contact-form">Contact form</a></li>
-				  <!--<li><a href="/about">About Iconfinder</a></li>-->
+				  <li><a href="/sitemap/">Type of vehicles</a></li>
 			  </ul>
 		  </div>
 	  </div>

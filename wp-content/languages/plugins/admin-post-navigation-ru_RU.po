@@ -1,0 +1,51 @@
+# Translation of Stable (latest release) in Russian
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-09-30 09:46:11+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#: admin-post-navigation.php:123
+msgid "&larr; Previous"
+msgstr "&larr; Предыдущая"
+
+#: admin-post-navigation.php:124
+msgid "Next &rarr;"
+msgstr "Следующая &rarr;"
+
+#: admin-post-navigation.php:173
+msgid "%s Navigation"
+msgstr "%s Навигация"
+
+#: admin-post-navigation.php:197
+msgid "Previous %1$s: %2$s"
+msgstr "Предыдущая %1$s: %2$s"
+
+#: admin-post-navigation.php:209
+msgid "Next %1$s: %2$s"
+msgstr "Следующая %1$s: %2$s"
+
+#. Plugin Name of the plugin/theme
+msgid "Admin Post Navigation"
+msgstr "Admin Post Navigation"
+
+#. Plugin URI of the plugin/theme
+msgid "http://coffee2code.com/wp-plugins/admin-post-navigation/"
+msgstr "http://coffee2code.com/wp-plugins/admin-post-navigation/"
+
+#. Description of the plugin/theme
+msgid "Adds links to navigate to the next and previous posts when editing a post in the WordPress admin."
+msgstr "Добавляет ссылки для перехода к следующей и предыдущей записям при редактировании записи в админ-панели WordPress."
+
+#. Author of the plugin/theme
+msgid "Scott Reilly"
+msgstr "Scott Reilly"
+
+#. Author URI of the plugin/theme
+msgid "http://coffee2code.com/"
+msgstr "http://coffee2code.com/"

@@ -7144,11 +7144,8 @@ button.close {
   margin-bottom: 3px;
 }
 .single-post-page .entry-images .image-details .btn-download {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   border-radius: 3px;
-}
-.single-post-page .entry-images .image-details .policy-text {
-  font-size: 13px;
 }
 .single-post-page .entry-images .post-details-wrapper {
   margin: 20px 0 0;

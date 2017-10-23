@@ -53,19 +53,9 @@
 			</div>
 
 			<a href="<?= $src ?>" download class="btn btn-success btn-lg btn-download">Download image</a>
+
+			<a href="http://tracking.depositphotos.com/aff_c?offer_id=4&aff_id=17093" class="btn btn-info btn-lg btn-download" target="_blank">See more images</a>
 			
-			<div class="policy-text">
-				<p>
-					All images on the website are in a PNG file format with transparent background.
-					<br>
-					We are trying to post pictures in a maximum resolution. Hope they will be helpful for you in web design.
-					<br>
-					You can use them for free for non-commercial projects and for personal use.
-				</p>
-				<p>
-					All rights reserved by authors of artworks.
-				</p>
-			</div>
 		</div>
 	</div>
 

@@ -78,12 +78,8 @@ do_action( 'admin_footer', '' );
  * refers to the global hook suffix of the current page.
  *
  * @since 4.6.0
- *
- * @global string $hook_suffix
- *
- * @param string $hook_suffix The current admin page.
  */
-do_action( "admin_print_footer_scripts-$hook_suffix" );
+do_action( "admin_print_footer_scripts-{$hook_suffix}" );
 
 /**
  * Prints any scripts and data queued for the footer.
@@ -99,11 +95,8 @@ do_action( 'admin_print_footer_scripts' );
  * refers to the global hook suffix of the current page.
  *
  * @since 2.8.0
- *
- * @global string $hook_suffix
- * @param string $hook_suffix The current admin page.
  */
-do_action( "admin_footer-$hook_suffix" );
+do_action( "admin_footer-{$hook_suffix}" );
 
 // get_site_option() won't exist when auto upgrading from <= 2.7
 if ( function_exists('get_site_option') ) {
@@ -115,15 +108,5 @@ if ( function_exists('get_site_option') ) {
 
 <div class="clear"></div></div><!-- wpwrap -->
 <script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
-<script>
-	jQuery(function ($) {
-		var container = $('#titlediv');
-		var el = $('#wp-content-wrap .wp-editor-area');
-		var content = $('#wp-content-wrap .wp-editor-area').val();
-		if (!content) return;
-		content = content.replace(/(.*\.png)/g, '<img src="/wp-content/uploads/full/$1" style="width:300px; margin: 30px 0 0;"\/>');
-		container.append(content);
-	});
-</script>
 </body>
 </html>

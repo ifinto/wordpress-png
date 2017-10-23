@@ -5,10 +5,11 @@ if(!function_exists('add_action')){
 	exit;
 }
 
-define('LOGINIZER_VERSION', '1.3.1');
+define('LOGINIZER_VERSION', '1.3.2');
 define('LOGINIZER_DIR', WP_PLUGIN_DIR.'/'.basename(dirname(LOGINIZER_FILE)));
 define('LOGINIZER_URL', plugins_url('', LOGINIZER_FILE));
 define('LOGINIZER_PRO_URL', 'https://loginizer.com/features#compare');
+define('LOGINIZER_DOCS', 'https://loginizer.com/wiki/');
 
 include_once(LOGINIZER_DIR.'/functions.php');
 
@@ -174,9 +175,14 @@ function loginizer_load_plugin(){
 	// Check if the installed version is outdated
 	loginizer_update_check();
 	
-	$options = get_option('loginizer_options');
-	
+	// Set the array
 	$loginizer = array();
+	
+	// The IP Method to use
+	$loginizer['ip_method'] = get_option('loginizer_ip_method');
+	
+	// Load settings
+	$options = get_option('loginizer_options');
 	$loginizer['max_retries'] = empty($options['max_retries']) ? 3 : $options['max_retries'];
 	$loginizer['lockout_time'] = empty($options['lockout_time']) ? 900 : $options['lockout_time']; // 15 minutes
 	$loginizer['max_lockouts'] = empty($options['max_lockouts']) ? 5 : $options['max_lockouts'];
@@ -825,7 +831,7 @@ function loginizer_page_footer(){
 function loginizer_page_dashboard(){
 	
 	global $loginizer, $lz_error, $lz_env;
-	
+
 	// Is there a license key ?
 	if(isset($_POST['save_lz'])){
 	
@@ -856,6 +862,18 @@ function loginizer_page_dashboard(){
 			
 			// Mark as saved
 			$GLOBALS['lz_saved'] = true;
+		}
+		
+	}
+	
+	
+	// Is there a IP Method ?
+	if(isset($_POST['save_lz_ip_method'])){
+		
+		$ip_method = (int) lz_optpost('lz_ip_method');
+		
+		if($ip_method >= 0 && $ip_method <= 2){
+			update_option('loginizer_ip_method', $ip_method);
 		}
 		
 	}
@@ -891,7 +909,7 @@ input[type="text"], textarea, select {
 </style>
 	
 	<?php	
-	echo '<script src="http://api.loginizer.com/'.(defined('LOGINIZER_PREMIUM') ? 'news_security.js' : 'news.js').'"></script><br>';
+	echo '<script src="https://api.loginizer.com/'.(defined('LOGINIZER_PREMIUM') ? 'news_security.js' : 'news.js').'"></script><br>';
 
 	// Saved ?
 	if(!empty($GLOBALS['lz_saved'])){
@@ -999,7 +1017,17 @@ input[type="text"], textarea, select {
 			</tr>
 			<tr>				
 				<th align="left">'.__('Your IP Address', 'loginizer').'</th>
-				<td>'.$_SERVER['REMOTE_ADDR'].'</td>
+				<td>'.lz_getip().'
+					<div style="float:right">
+						Method : 
+						<select name="lz_ip_method" style="font-size:11px; width:150px">
+							<option value="0" '.lz_POSTselect('lz_ip_method', 0, (@$loginizer['ip_method'] == 0)).'>REMOTE_ADDR</option>
+							<option value="1" '.lz_POSTselect('lz_ip_method', 1, (@$loginizer['ip_method'] == 1)).'>HTTP_X_FORWARDED_FOR</option>
+							<option value="2" '.lz_POSTselect('lz_ip_method', 2, (@$loginizer['ip_method'] == 2)).'>HTTP_CLIENT_IP</option>
+						</select>
+						<input name="save_lz_ip_method" class="button button-primary" value="Save" type="submit" />
+					</div>
+				</td>
 			</tr>
 			<tr>				
 				<th align="left">'.__('wp-config.php is writable', 'loginizer').'</th>
